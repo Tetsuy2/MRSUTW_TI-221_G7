@@ -1,0 +1,33 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+     <title>Calatorii Moldova</title>
+     <meta content="" name="description">
+     <meta content="" name="keywords">
+
+     <!-- Favicons -->
+     <link href="/Content/img/Imaginea paginii.png" rel="icon">
+     <link href="/Content/img/Imaginea paginii.png" rel="apple-touch-icon">
+
+     <!--  <link href="Content/css/style.css" rel="stylesheet"> -->
+     <!-- Google Fonts -->
+     @Styles.Render("~/bundles/css")
+
+</head>
+<body>
+     <header id="header" class="fixed-top d-flex align-items-center @(Url.RouteUrl(ViewContext.RouteData.Values) == "/" ? "header-transparent" : "")">
+          @Html.Partial("_Header")
+     </header>
+     @RenderBody()
+
+     @Html.Partial("_Footer")
+
+     @Scripts.Render("~/bundles/bootstrap/js")
+
+     @RenderSection("scripts", required: false)
+</body>
+</html>
