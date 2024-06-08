@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Travel";
+}
+
+<style>
+    .service-categories {
+        margin-top: 10%;
+    }
+
+        .service-categories .btn-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 18%;
+            height: 250px;
+            margin: 0 1%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+
+            .service-categories .btn-block img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 8px 8px 0 0;
+            }
+
+            .service-categories .btn-block h3 {
+                margin-top: 10px;
+            }
+
+        .service-categories .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+</style>
+
+<section class="service-categories">
+    <div class="container">
+        <div class="row">
+            <a href="@Url.Action("Monuments", "Travel")" class="btn btn-lg btn-primary btn-block">
+                <img src="/Content/img/Travel/Arc de triumf.jpg" alt="Monuments" class="img-fluid">
+                <h3>Monuments</h3>
+            </a>
+            <a href="@Url.Action("Wineries", "Travel")" class="btn btn-lg btn-primary btn-block">
+                <img src="/Content/img/Travel/Vinaria Cricova.jpg" alt="Wineries" class="img-fluid">
+                <h3>Wineries</h3>
+            </a>
+            <a href="@Url.Action("Parks", "Travel")" class="btn btn-lg btn-primary btn-block">
+                <img src="/Content/img/Travel/Parcul Dendrarium.jpg" alt="Parks" class="img-fluid">
+                <h3>Parks</h3>
+            </a>
+            <a href="@Url.Action("Culture", "Travel")" class="btn btn-lg btn-primary btn-block">
+                <img src="/Content/img/Travel/Muzeul Național de Etnografie și Istorie Naturală.jpg" alt="Culture" class="img-fluid">
+                <h3>Culture</h3>
+            </a>
+            <a href="@Url.Action("Church", "Travel")" class="btn btn-lg btn-primary btn-block">
+                <img src="/Content/img/Travel/Catedrala Nașterea Domnului.jpg" alt="The Church" class="img-fluid">
+                <h3>The Church</h3>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,59 @@
+@{
+    ViewBag.Title = "Manager";
+}
+<style>
+    .service-categories {
+        margin-top: 7%;
+    }
+</style>
+
+<<section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div class="container">
+        <h1 class="text-center"> Manager Dashboard</h1>
+        <!-- View Items Section -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2> View Items</h2>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th> ID</th>
+                            <th> Name</th>
+                            <th> Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example item row -->
+                        <tr>
+                            <td> 1</td>
+                            <td> Item 1</td>
+                            <td> This is the first item.</td>
+                        </tr>
+                        <!-- Add more items here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Add Item Section -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2> Add Item</h2>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="itemName"> Item Name</label>
+                        <input type="text" class="form-control" id="itemName" placeholder="Enter item name">
+                    </div>
+                    <div class="form-group">
+                        <label for="itemDescription"> Item Description</label>
+                        <textarea class="form-control" id="itemDescription" rows="3" placeholder="Enter item description"> </textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"> Add Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+ </section>

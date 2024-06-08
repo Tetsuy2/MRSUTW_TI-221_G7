@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Calatorii.Domain.Entities.Trip>
+
+@{
+    ViewBag.Title = "Trips";
+}
+
+<h2>Trips</h2>
+
+<form method="get" action="@Url.Action("Index")" class="form-inline mb-3">
+    <div class="form-group mr-2">
+        <input type="text" name="searchString" class="form-control" placeholder="Search..." value="@Request.QueryString["searchString"]" />
+    </div>
+    <div class="form-group mr-2">
+        <select name="sortBy" class="form-control">
+            <option value="">Sort By...</option>
+            <option value="Location" @(Request.QueryString["sortBy"] == "Location" ? "selected" : "")>Location</option>
+            <option value="Date" @(Request.QueryString["sortBy"] == "Date" ? "selected" : "")>Date</option>
+            <option value="Source" @(Request.QueryString["sortBy"] == "Source" ? "selected" : "")>Source</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Source</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var trip in Model)
+        {
+            <tr>
+                <td>@trip.Id</td>
+                <td>@trip.Name</td>
+                <td>@trip.Destination</td>
+                <td>@trip.Date.ToShortDateString()</td>
+                <td>@trip.Source</td>
+            </tr>
+        }
+    </tbody>
+</table>

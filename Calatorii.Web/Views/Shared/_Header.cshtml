@@ -1,0 +1,50 @@
+﻿@{
+    var isAuthenticated = User.Identity.IsAuthenticated;
+    var userRole = User.IsInRole("Admin") ? "Admin" :
+                   User.IsInRole("Manager") ? "Manager" :
+                   User.IsInRole("User") ? "User" : null;
+}
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<div class="container d-flex justify-content-between align-items-center">
+    <div class="logo">
+        <h1 class="text-light"><a href="@Url.Action("Index", "Home")"><span>Calatorii</span></a></h1>
+    </div>
+
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")" href="@Url.Action("Index", "Home")">Home</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "About" ? "active" : "")" href="@Url.Action("Index", "About")">About</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Travel" ? "active" : "")" href="@Url.Action("Index", "Travel")">Travel</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Trip" ? "active" : "")" href="@Url.Action("Index", "Trip")">Trip</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "History" ? "active" : "")" href="@Url.Action("Index", "History")">History</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Team" ? "active" : "")" href="@Url.Action("Index", "Team")">Team</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Review" ? "active" : "")" href="@Url.Action("Index", "Review")">Review</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Questions" ? "active" : "")" href="@Url.Action("Index", "Questions")">Questions</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Map" ? "active" : "")" href="@Url.Action("Index", "Map")">Map</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Job" ? "active" : "")" href="@Url.Action("Index", "Job")">Job</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Manager" ? "active" : "")" href="@Url.Action("Index", "Manager")">Manager</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Admin" ? "active" : "")" href="@Url.Action("Index", "Admin")">Admin</a></li>
+            <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Account" && ViewContext.RouteData.Values["action"].ToString() == "Logout" ? "active" : "")" href="@Url.Action("Logout", "Account")">Logout</a></li>
+
+            @if (isAuthenticated)
+            {
+                <li><a href="@Url.Action("Profile", "Account")">Profile</a></li>
+                if (userRole == "User" || userRole == "Manager" || userRole == "Admin")
+                {
+                    <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Job" ? "active" : "")" href="@Url.Action("Index", "Job")">Job</a></li>
+                }
+                if (userRole == "Manager" || userRole == "Admin")
+                {
+                    <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Manager" ? "active" : "")" href="@Url.Action("Index", "Manager")">Manager</a></li>
+                }
+                if (userRole == "Admin")
+                {
+                    <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Admin" ? "active" : "")" href="@Url.Action("Index", "Admin")">Admin</a></li>
+                }
+                <li><a class="@(ViewContext.RouteData.Values["controller"].ToString() == "Account" && ViewContext.RouteData.Values["action"].ToString() == "Logout" ? "active" : "")" href="@Url.Action("Logout", "Account")">Logout</a></li>
+            }
+        </ul>
+    </nav>
+</div>
