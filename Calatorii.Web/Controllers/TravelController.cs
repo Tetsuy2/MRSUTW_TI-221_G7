@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 ﻿using System.Web.Mvc;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1
 
 namespace Calatorii.Web.Controllers
 {
@@ -8,6 +16,7 @@ namespace Calatorii.Web.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
 
         public ActionResult Monuments()
         {
@@ -35,3 +44,7 @@ namespace Calatorii.Web.Controllers
         }
     }
 }
+=======
+    }
+}
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1

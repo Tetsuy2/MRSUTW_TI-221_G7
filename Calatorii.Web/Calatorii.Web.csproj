@@ -296,6 +296,7 @@
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\LogOutController.cs" />
@@ -303,6 +304,8 @@
     <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\ParksController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
+=======
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -361,6 +364,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\Review\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Questions\Index.cshtml" />
     <Content Include="Views\Map\Index.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
@@ -372,6 +376,8 @@
     <Content Include="Views\Wineries\Wineries.cshtml" />
     <Content Include="Views\Culture\Culture.cshtml" />
     <Content Include="Views\Church\Church.cshtml" />
+=======
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

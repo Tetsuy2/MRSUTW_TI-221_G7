@@ -48,12 +48,17 @@ namespace Calatorii.Web
             routes.MapRoute(
                 name: "Login",
                 url: "login/{action}/{id}",
+<<<<<<< HEAD
                 defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
+=======
+                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1
             );
 
             routes.MapRoute(
                 name: "Register",
                 url: "register/{action}/{id}",
+<<<<<<< HEAD
                 defaults: new { controller = "Register", action = "Register", id = UrlParameter.Optional }
             );
 
@@ -91,6 +96,9 @@ namespace Calatorii.Web
                 name: "LogOut",
                 url: "logout/{action}/{id}",
                 defaults: new { controller = "LogOut", action = "Index", id = UrlParameter.Optional }
+=======
+                defaults: new { controller = "Account", action = "Register", id = UrlParameter.Optional }
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1
             );
 
             routes.MapRoute(

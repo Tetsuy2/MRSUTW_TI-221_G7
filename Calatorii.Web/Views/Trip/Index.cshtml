@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@model IEnumerable<Calatorii.Domain.Entities.Trip>
 
 @{
@@ -44,3 +45,58 @@
         }
     </tbody>
 </table>
+=======
+﻿
+@{
+    ViewBag.Title = "Trip";
+}
+@using Calatorii.Domain.Entities.User
+@model List<Trip>
+
+
+
+<section class="portfolio">
+    <div class="container">
+        <h2 class="text-center mb-5"> Lista de excursii</h2>
+        <div class="col">
+            <a class="btn btn-primary" asp-controller="Trip" asp-action="Create">Adauga excursie</a>
+        </div>
+        <div class="col">
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Created At</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var trips in Model)
+            {
+                <tr>
+                    <td>@trips.Id</td>
+                    <td>@trips.Title</td>
+                    <td>@trips.Description</td>
+                    <td>@(trips.Price)$</td>
+                    <td><img src="/tripimage/@trips.ImageFileName" wwidth="100"></td>
+                    <td>@trips.CreatedAt.ToString("MM/dd/yyyy")</td>
+                    <td style="white-space:nowrap">
+                        <a class="btn-primary btn-sm" asp-controller="Trip" asp-action="Edit"
+                           asp-route-id="@trips.Id">Edit</a>
+                        <a class="btn-primary btn-sm" asp-controller="Trip" asp-action="Delete"
+                           asp-route-id="@trips.Id">Delete</a>
+                    </td>
+                </tr>
+
+            }
+            </tbody>
+        </table>
+    </div>
+</section>
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1

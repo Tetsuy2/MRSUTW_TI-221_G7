@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+<<<<<<< HEAD
 using System.Web.Mvc;
 using Calatorii.Domain.Entities;
+=======
+using System.Web;
+using System.Web.Mvc;
+using Calatorii.BusinessLogic.DBModel; // Make sure this using directive is here
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1
 
 namespace Calatorii.Web.Controllers
 {
     public class TripController : Controller
     {
+<<<<<<< HEAD
         private static List<Trip> trips = new List<Trip>
         {
             new Trip { Id = 1, Name = "Trip to Chișinău", Destination = "Chișinău", Date = new DateTime(2024, 9, 15), Source = "pandatur" },
@@ -50,6 +57,19 @@ namespace Calatorii.Web.Controllers
             }
 
             return View(filteredTrips.ToList());
+=======
+        private readonly Calatorii.BusinessLogic.DBModel.AppContext context;
+
+        public TripController(Calatorii.BusinessLogic.DBModel.AppContext context)
+        {
+            this.context = context;
+        }
+
+        public ActionResult Index()
+        {
+            var trips = context.Trips.ToList();
+            return View(trips);
+>>>>>>> f006cfef8bd9ec470295ed59af47bbd576fe2fa1
         }
     }
 }
