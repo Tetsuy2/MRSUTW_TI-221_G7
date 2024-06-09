@@ -125,6 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="App_Start\UnityWebApiActivator.cs" />
+>>>>>>> c07de0dcb2c15f00cd2a80f79ac72649b834707e
     <Compile Include="BussinesLogic.cs" />
     <Compile Include="Core\AdminApi.cs" />
     <Compile Include="Core\UserApi.cs" />
